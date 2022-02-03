@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "b5773e1f-3ec7-4812-b75e-eb84a71023bd",
+		"name": "capstone-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ebay-API-1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"import { EmployeeManager } from \"./pageObjects/EmployeeManager\";\r",
+							"\r",
+							"const page = new EmployeeManager(\"chrome\");\r",
+							"\r",
+							"// your data will go in this variable\r",
+							"const employees = [];\r",
+							"\r",
+							"describe(\"checking that the UI matches the DB\", () => {\r",
+							"beforeEach(async () => await page.navigate());\r",
+							"afterAll(async () => await page.driver.quit());\r",
+							"for (let i = 0; i < employees.length; i++) {\r",
+							"    test(`Looking for ${employees[i].employee_name} in the UI`, async () => {\r",
+							"    await page.selectEmployee(employees[i].employee_name);\r",
+							"    let employee = await page.getCurrentEmployee();\r",
+							"    expect(employee.id).toEqual(employees[i].employee_id.toString());\r",
+							"    expect(employee.name).toEqual(employees[i].employee_name);\r",
+							"    expect(employee.phone.toString()).toEqual(employees[i].employee_phone);\r",
+							"    expect(employee.email).toEqual(employees[i].employee_email);\r",
+							"    expect(employee.title).toEqual(employees[i].employee_title);\r",
+							"    });\r",
+							"}\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.ebay.com/myb/PurchaseHistoryCommitmentsContainer?ipp=25&Period=1&Filter=1&lazyLoading=true&cmid=2748&pageId=2060353&deferAds=true&_=1643831973170",
+					"protocol": "https",
+					"host": [
+						"www",
+						"ebay",
+						"com"
+					],
+					"path": [
+						"myb",
+						"PurchaseHistoryCommitmentsContainer"
+					],
+					"query": [
+						{
+							"key": "ipp",
+							"value": "25"
+						},
+						{
+							"key": "Period",
+							"value": "1"
+						},
+						{
+							"key": "Filter",
+							"value": "1"
+						},
+						{
+							"key": "lazyLoading",
+							"value": "true"
+						},
+						{
+							"key": "cmid",
+							"value": "2748"
+						},
+						{
+							"key": "pageId",
+							"value": "2060353"
+						},
+						{
+							"key": "deferAds",
+							"value": "true"
+						},
+						{
+							"key": "_",
+							"value": "1643831973170"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ebay-API-2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"import { EmployeeManager } from \"./pageObjects/EmployeeManager\";\r",
+							"\r",
+							"const page = new EmployeeManager(\"chrome\");\r",
+							"\r",
+							"// your data will go in this variable\r",
+							"const employees = [];\r",
+							"\r",
+							"describe(\"checking that the UI matches the DB\", () => {\r",
+							"beforeEach(async () => await page.navigate());\r",
+							"afterAll(async () => await page.driver.quit());\r",
+							"for (let i = 0; i < employees.length; i++) {\r",
+							"    test(`Looking for ${employees[i].employee_name} in the UI`, async () => {\r",
+							"    await page.selectEmployee(employees[i].employee_name);\r",
+							"    let employee = await page.getCurrentEmployee();\r",
+							"    expect(employee.id).toEqual(employees[i].employee_id.toString());\r",
+							"    expect(employee.name).toEqual(employees[i].employee_name);\r",
+							"    expect(employee.phone.toString()).toEqual(employees[i].employee_phone);\r",
+							"    expect(employee.email).toEqual(employees[i].employee_email);\r",
+							"    expect(employee.title).toEqual(employees[i].employee_title);\r",
+							"    });\r",
+							"}\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.ebay.com/gh/useracquisition?_trksid=p2060353.m2034.l9133&correlation=gci%3D55ce9e3c17e0ac685ed45199fffc1508%2Csi%3Df7062ad817c0a0d098a7e9c3ffda7887%2Csiid%3DAAGwHDD4*%2Cc%3D50%2Csid%3Dp2060353.m2034.l9133%2CoperationId%3D3321114%2Ctrk-gflgs%3D&show_optin_banner=true&v=2",
+					"protocol": "https",
+					"host": [
+						"www",
+						"ebay",
+						"com"
+					],
+					"path": [
+						"gh",
+						"useracquisition"
+					],
+					"query": [
+						{
+							"key": "_trksid",
+							"value": "p2060353.m2034.l9133"
+						},
+						{
+							"key": "correlation",
+							"value": "gci%3D55ce9e3c17e0ac685ed45199fffc1508%2Csi%3Df7062ad817c0a0d098a7e9c3ffda7887%2Csiid%3DAAGwHDD4*%2Cc%3D50%2Csid%3Dp2060353.m2034.l9133%2CoperationId%3D3321114%2Ctrk-gflgs%3D"
+						},
+						{
+							"key": "show_optin_banner",
+							"value": "true"
+						},
+						{
+							"key": "v",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ebay-API-3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"import { EmployeeManager } from \"./pageObjects/EmployeeManager\";\r",
+							"\r",
+							"const page = new EmployeeManager(\"chrome\");\r",
+							"\r",
+							"// your data will go in this variable\r",
+							"const employees = [];\r",
+							"\r",
+							"describe(\"checking that the UI matches the DB\", () => {\r",
+							"beforeEach(async () => await page.navigate());\r",
+							"afterAll(async () => await page.driver.quit());\r",
+							"for (let i = 0; i < employees.length; i++) {\r",
+							"    test(`Looking for ${employees[i].employee_name} in the UI`, async () => {\r",
+							"    await page.selectEmployee(employees[i].employee_name);\r",
+							"    let employee = await page.getCurrentEmployee();\r",
+							"    expect(employee.id).toEqual(employees[i].employee_id.toString());\r",
+							"    expect(employee.name).toEqual(employees[i].employee_name);\r",
+							"    expect(employee.phone.toString()).toEqual(employees[i].employee_phone);\r",
+							"    expect(employee.email).toEqual(employees[i].employee_email);\r",
+							"    expect(employee.title).toEqual(employees[i].employee_title);\r",
+							"    });\r",
+							"}\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.ebay.com/gh/useracquisition?_trksid=p2060353.m2034.l9133&correlation=gci%3D55ce9e3c17e0ac685ed45199fffc1508%2Csi%3Df7062ad817c0a0d098a7e9c3ffda7887%2Csiid%3DAAGwHDD4*%2Cc%3D50%2Csid%3Dp2060353.m2034.l9133%2CoperationId%3D3321114%2Ctrk-gflgs%3D&show_optin_banner=true&v=2",
+					"protocol": "https",
+					"host": [
+						"www",
+						"ebay",
+						"com"
+					],
+					"path": [
+						"gh",
+						"useracquisition"
+					],
+					"query": [
+						{
+							"key": "_trksid",
+							"value": "p2060353.m2034.l9133"
+						},
+						{
+							"key": "correlation",
+							"value": "gci%3D55ce9e3c17e0ac685ed45199fffc1508%2Csi%3Df7062ad817c0a0d098a7e9c3ffda7887%2Csiid%3DAAGwHDD4*%2Cc%3D50%2Csid%3Dp2060353.m2034.l9133%2CoperationId%3D3321114%2Ctrk-gflgs%3D"
+						},
+						{
+							"key": "show_optin_banner",
+							"value": "true"
+						},
+						{
+							"key": "v",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ebay-API-4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"import { EmployeeManager } from \"./pageObjects/EmployeeManager\";\r",
+							"\r",
+							"const page = new EmployeeManager(\"chrome\");\r",
+							"\r",
+							"// your data will go in this variable\r",
+							"const employees = [];\r",
+							"\r",
+							"describe(\"checking that the UI matches the DB\", () => {\r",
+							"beforeEach(async () => await page.navigate());\r",
+							"afterAll(async () => await page.driver.quit());\r",
+							"for (let i = 0; i < employees.length; i++) {\r",
+							"    test(`Looking for ${employees[i].employee_name} in the UI`, async () => {\r",
+							"    await page.selectEmployee(employees[i].employee_name);\r",
+							"    let employee = await page.getCurrentEmployee();\r",
+							"    expect(employee.id).toEqual(employees[i].employee_id.toString());\r",
+							"    expect(employee.name).toEqual(employees[i].employee_name);\r",
+							"    expect(employee.phone.toString()).toEqual(employees[i].employee_phone);\r",
+							"    expect(employee.email).toEqual(employees[i].employee_email);\r",
+							"    expect(employee.title).toEqual(employees[i].employee_title);\r",
+							"    });\r",
+							"}\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.ebay.com/gh/dfpsvc?_trkparms=amclksrc%253DITM%2526aid%253D1110002%2526algo%253DSPLICE.SOI%2526ao%253D1%2526asc%253D236212%2526meid%253D1128d6c42c694d868f4d680757fa41ca%2526pid%253D101196%2526rk%253D3%2526rkt%253D9%2526sd%253D194141291339%2526itm%253D194234701953%2526pmt%253D1%2526noa%253D0%2526pg%253D2047675%2526algv%253DPromotedSellersOtherItemsV2WithMLRv3%2526brand%253DNokia&_trksid=p2047675.c101196.m2219&amdata=cksum%253A1942347019531128d6c42c694d868f4d680757fa41ca%257Cenc%253AAQAGAAACAM%25252FJOI0po2MJyeNJ8J21VYogmHHpC1S%25252BKG5jKrXMKDULgeVHQG8VpuL5EwNZGqXJPSnuD3HumuZtkfXaH0gS1bAUggEyTLiKA8hTZCyIjHbBAYgu%25252BdMEwsvDIcrRoTGeuDxe3Px8%25252FJ%25252BP%25252FMfKGNx4u%25252BHUzY8R5KkYAJkYf5Bmd%25252B32qaEGq4kuM5MMam7HkIRTkAoIjw5%25252B1wh97W6wX0ge9qaXFMH303DA8upvome5jsPZhcXRGKa4urn0pgj6CYTLfbQ4OgzIJxgm40Psb%25252FSCCfCHJauv5H4wmD19wX1cbIz01XWgtq3j7kku8jmbyAt2Ku83zivl0URrc1qPcjSeuY%25252B5AW3rYfQ9ikwUStvWMmKE8d2yC4A2TKoSMW%25252FT0sQgPRCNsjMzvijMGOVjZqZuGB1lntN4l5%25252BX5yygCHAdImCZgjwF0Rx3Sm5bHoXBvhXA6UqWq2v5k9uMAcNNJehN8NSMSw%25252BWpqxYMhJnjqqzACk3m9FTfa0VhxwrCaloJWRWc93WDS4kLfVqxsHrQkC4QRwOT6sEq9NLS0C%25252F3assJr5CVvVkbSdtNSnpY6C60gn%25252Fx2OxJPGehMhMPD%25252FcVyNUGMCLPV9ifb8nPys0nOAL%25252BjyDgHDjo56BNXG%25252Bi6DgUyqdy%25252Bpat8ogzegzYpQQcYgDkM2FYoGdSKfBJ7SmW0jS4%25252BK5%257Campid%253APL_CLK%257Cclp%253A2047675&v=2",
+					"protocol": "https",
+					"host": [
+						"www",
+						"ebay",
+						"com"
+					],
+					"path": [
+						"gh",
+						"dfpsvc"
+					],
+					"query": [
+						{
+							"key": "_trkparms",
+							"value": "amclksrc%253DITM%2526aid%253D1110002%2526algo%253DSPLICE.SOI%2526ao%253D1%2526asc%253D236212%2526meid%253D1128d6c42c694d868f4d680757fa41ca%2526pid%253D101196%2526rk%253D3%2526rkt%253D9%2526sd%253D194141291339%2526itm%253D194234701953%2526pmt%253D1%2526noa%253D0%2526pg%253D2047675%2526algv%253DPromotedSellersOtherItemsV2WithMLRv3%2526brand%253DNokia"
+						},
+						{
+							"key": "_trksid",
+							"value": "p2047675.c101196.m2219"
+						},
+						{
+							"key": "amdata",
+							"value": "cksum%253A1942347019531128d6c42c694d868f4d680757fa41ca%257Cenc%253AAQAGAAACAM%25252FJOI0po2MJyeNJ8J21VYogmHHpC1S%25252BKG5jKrXMKDULgeVHQG8VpuL5EwNZGqXJPSnuD3HumuZtkfXaH0gS1bAUggEyTLiKA8hTZCyIjHbBAYgu%25252BdMEwsvDIcrRoTGeuDxe3Px8%25252FJ%25252BP%25252FMfKGNx4u%25252BHUzY8R5KkYAJkYf5Bmd%25252B32qaEGq4kuM5MMam7HkIRTkAoIjw5%25252B1wh97W6wX0ge9qaXFMH303DA8upvome5jsPZhcXRGKa4urn0pgj6CYTLfbQ4OgzIJxgm40Psb%25252FSCCfCHJauv5H4wmD19wX1cbIz01XWgtq3j7kku8jmbyAt2Ku83zivl0URrc1qPcjSeuY%25252B5AW3rYfQ9ikwUStvWMmKE8d2yC4A2TKoSMW%25252FT0sQgPRCNsjMzvijMGOVjZqZuGB1lntN4l5%25252BX5yygCHAdImCZgjwF0Rx3Sm5bHoXBvhXA6UqWq2v5k9uMAcNNJehN8NSMSw%25252BWpqxYMhJnjqqzACk3m9FTfa0VhxwrCaloJWRWc93WDS4kLfVqxsHrQkC4QRwOT6sEq9NLS0C%25252F3assJr5CVvVkbSdtNSnpY6C60gn%25252Fx2OxJPGehMhMPD%25252FcVyNUGMCLPV9ifb8nPys0nOAL%25252BjyDgHDjo56BNXG%25252Bi6DgUyqdy%25252Bpat8ogzegzYpQQcYgDkM2FYoGdSKfBJ7SmW0jS4%25252BK5%257Campid%253APL_CLK%257Cclp%253A2047675"
+						},
+						{
+							"key": "v",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
